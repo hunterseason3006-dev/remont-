@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>СЕРВИС №1 — ремонт самокатов и гироскутеров, прокат велосипедов, Балаково</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0A1A3A;--ink:#F4F7FF;--muted:#A9B7D6;--line:rgba(255,255,255,.18);--acc:#fff;--onacc:#0A1A3A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1A3A}}
+:root[data-theme="dark"]{--bg:#0A1A3A}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--bg);
+background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+background-size:36px 36px;font:400 17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+h1,h2,h3,.num{font-family:Oswald,"Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.logo{font:700 22px Oswald,sans-serif;letter-spacing:.06em;text-decoration:none}
+.tel{font-weight:600;text-decoration:none}
+.hero{position:relative;overflow:hidden;padding:76px 0 92px}
+.big{position:absolute;right:-2%;top:50%;transform:translateY(-50%);font:700 clamp(200px,38vw,460px)/1 Oswald,sans-serif;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.2);pointer-events:none;user-select:none}
+.hero .wrap{position:relative}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+.hero h1{font-size:clamp(40px,8vw,88px);font-weight:700;max-width:12ch}
+.hero p{max-width:44ch;color:var(--muted);font-size:19px;margin:24px 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;background:var(--acc);color:var(--onacc);padding:15px 26px;border:2px solid var(--acc);font:600 16px Inter,sans-serif;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--acc)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(255,255,255,.4)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,5vw,52px);font-weight:700;margin-bottom:14px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid var(--line)}
+.item{padding:26px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,26,58,.72)}
+.item:last-child{grid-column:1/-1}
+.num{font-size:44px;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.item h3{font-size:24px;margin:10px 0 8px}
+.item p{margin:0;color:var(--muted)}
+.rates{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:rgba(10,26,58,.72)}
+.rate{padding:28px 22px;border-right:1px solid var(--line)}
+.rate:last-child{border-right:0}
+.rate small{display:block;color:var(--muted);font-size:14px;min-height:22px}
+.rate h3{font-size:20px;margin-bottom:6px}
+.rate b{display:block;margin-top:22px;font:700 clamp(38px,5vw,56px)/1 Oswald,sans-serif}
+.note{color:var(--muted);font-size:14px;margin:16px 0 0}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.steps li{border-top:2px solid var(--acc);padding-top:14px}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+.contact{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;align-items:start}
+.contact small{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
+.phone{font:700 clamp(32px,5.4vw,60px)/1 Oswald,sans-serif;text-decoration:none;letter-spacing:.02em}
+.contact p{margin:0;font-size:19px;font-weight:500}
+.contact a{text-decoration-thickness:1px;text-underline-offset:4px}
+footer{padding:26px 0 44px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:860px){
+ .grid{grid-template-columns:1fr}.rates{grid-template-columns:1fr 1fr}
+ .rate:nth-child(2){border-right:0}.rate:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .steps{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}
+ .hero{padding:52px 0 64px}
+}
+@media (max-width:480px){.rates,.steps{grid-template-columns:1fr}.rate{border-right:0;border-bottom:1px solid var(--line)}.rate:last-child{border-bottom:0}}
+@media (prefers-reduced-motion:reduce){.hero .wrap{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none;box-shadow:none}}
+
+.logo{display:inline-flex;align-items:center;gap:10px}
+.batt{display:inline-flex;gap:2px;padding:3px;border:2px solid var(--acc);position:relative;width:32px;height:17px}
+.batt::after{content:"";position:absolute;right:-6px;top:3px;width:3px;height:6px;background:var(--acc)}
+.batt b{flex:1;background:var(--acc);opacity:.15;animation:chg 2.4s infinite}
+.batt b:nth-child(2){animation-delay:.4s}.batt b:nth-child(3){animation-delay:.8s}
+@keyframes chg{0%,20%{opacity:.15}40%,80%{opacity:1}100%{opacity:.15}}
+.prog{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;background:var(--acc);transform:scaleX(0);transform-origin:left;z-index:9}
+.big{animation:float 9s ease-in-out infinite alternate}
+@keyframes float{from{transform:translateY(-50%) rotate(-2deg)}to{transform:translateY(-53%) rotate(2deg)}}
+.hero::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc),transparent);opacity:.3;animation:scan 7s linear infinite;pointer-events:none}
+@keyframes scan{from{top:0}to{top:100%}}
+.w{display:inline-block;animation:up .8s cubic-bezier(.2,.8,.2,1) both}
+.hero p{animation:up .8s .75s both}.btns{animation:up .8s .95s both}
+.btn.call{position:relative}
+.btn.call::after{content:"";position:absolute;inset:-2px;border:2px solid var(--acc);animation:ring 2.4s ease-out infinite;pointer-events:none}
+@keyframes ring{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(1.2,1.7)}}
+.tick{overflow:hidden;white-space:nowrap;background:var(--acc);color:var(--onacc);padding:12px 0}
+.tick div{display:inline-block;animation:mq 30s linear infinite;font:700 22px Oswald,sans-serif;letter-spacing:.08em}
+.tick:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.js .rv{opacity:0;transform:translateY(28px)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv{transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s),translate .3s ease,background-color .3s,color .3s}
+.num{transition:color .3s}
+.item.in:hover{translate:0 -5px;background:rgba(255,255,255,.09)}
+.item:hover .num{color:var(--acc)}
+.rate small{transition:color .3s}
+.rate.in:hover{background:var(--acc);color:var(--onacc)}
+.rate:hover small{color:#4A5B7F}
+section h2::after{content:"";display:block;height:4px;width:0;background:var(--acc);margin-top:14px;transition:width .8s .3s ease}
+section h2.in::after{width:64px}
+.steps li{border-top:0;position:relative}
+.steps li::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .9s .25s ease}
+.steps li.in::before{transform:scaleX(1)}
+.steps li{padding-top:18px}
+.phone{background:linear-gradient(var(--acc),var(--acc)) 0 100%/0 3px no-repeat;transition:background-size .4s}
+.phone:hover{background-size:100% 3px}
+.st{display:flex;align-items:center;gap:9px;margin-top:10px!important;font-size:15px!important;color:var(--muted)}
+.st::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c);animation:pulse 1.8s ease-out infinite}
+.st.open{--c:#6EE7A0}.st.closed{--c:#FF9B9B}
+@keyframes pulse{from{box-shadow:0 0 0 0 var(--c)}to{box-shadow:0 0 0 9px transparent}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.prog{display:none}}
+</style>
+</head>
+<body>
+<div class="prog" aria-hidden="true"></div>
+<div class="wrap">
+ <header>
+  <a class="logo" href="#"><i class="batt" aria-hidden="true"><b></b><b></b><b></b></i>СЕРВИС №1</a>
+  <a class="tel" href="tel:+79378086702">+7 (937) 808-67-02</a>
+ </header>
+</div>
+
+<div class="hero">
+ <div class="big" aria-hidden="true">№1</div>
+ <div class="wrap">
+  <h1>Ремонт всего, что ездит на батарейках</h1>
+  <p>Электросамокаты, гироскутеры, электровелосипеды. Мастерская в Балаково, а ещё у нас можно взять велосипед напрокат.</p>
+  <div class="btns">
+   <a class="btn call" href="tel:+79378086702">Позвонить</a>
+   <a class="btn ghost" href="#rent">Тарифы проката</a>
+  </div>
+ </div>
+</div>
+
+<div class="tick" aria-hidden="true"><div>САМОКАТЫ ✦ ГИРОСКУТЕРЫ ✦ ЭЛЕКТРОВЕЛОСИПЕДЫ ✦ ПРОКАТ ВЕЛОСИПЕДОВ ✦ САМОКАТЫ ✦ ГИРОСКУТЕРЫ ✦ ЭЛЕКТРОВЕЛОСИПЕДЫ ✦ ПРОКАТ ВЕЛОСИПЕДОВ ✦ САМОКАТЫ ✦ ГИРОСКУТЕРЫ ✦ ЭЛЕКТРОВЕЛОСИПЕДЫ ✦ ПРОКАТ ВЕЛОСИПЕДОВ ✦ САМОКАТЫ ✦ ГИРОСКУТЕРЫ ✦ ЭЛЕКТРОВЕЛОСИПЕДЫ ✦ ПРОКАТ ВЕЛОСИПЕДОВ ✦ </div></div>
+
+<section id="repair"><div class="wrap">
+ <h2>Что ремонтируем</h2>
+ <p class="lead">Если у техники есть аккумулятор и мотор, приносите. Стоимость называем после диагностики.</p>
+ <div class="grid">
+  <div class="item"><div class="num">01</div><h3>Электросамокаты</h3><p>Аккумулятор, контроллер, мотор-колесо, тормоза, покрышки и камеры.</p></div>
+  <div class="item"><div class="num">02</div><h3>Гироскутеры и моноколёса</h3><p>Не включается, не держит заряд, плата, датчики, аккумулятор.</p></div>
+  <div class="item"><div class="num">03</div><h3>Электровелосипеды и электроскутеры</h3><p>Мотор, контроллер, батарея, дисплей, проводка.</p></div>
+  <div class="item"><div class="num">04</div><h3>Детские электромобили и радиоуправляемые модели</h3><p>Моторы, зарядка, кнопки, аккумуляторы.</p></div>
+  <div class="item"><div class="num">05</div><h3>Другая техника на батарейках</h3><p>Не нашли своё? Позвоните и опишите, что сломалось.</p></div>
+ </div>
+</div></section>
+
+<section id="rent"><div class="wrap">
+ <h2>Прокат велосипедов</h2>
+ <p class="lead">Выберите срок, цена указана за весь период.</p>
+ <div class="rates">
+  <div class="rate"><h3>До 3 часов</h3><small>&nbsp;</small><b>500 ₽</b></div>
+  <div class="rate"><h3>На день</h3><small>с 9:00 до 17:00</small><b>800 ₽</b></div>
+  <div class="rate"><h3>На сутки</h3><small>&nbsp;</small><b>1400 ₽</b></div>
+  <div class="rate"><h3>На выходные</h3><small>с пятницы по понедельник</small><b>1700 ₽</b></div>
+ </div>
+ <p class="note">Условия проката уточняйте по телефону.</p>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Как проходит ремонт</h2>
+ <ol class="steps" style="margin-top:36px">
+  <li><h3>Приносите</h3><p>Приезжайте с техникой или сначала позвоните и опишите поломку.</p></li>
+  <li><h3>Диагностика</h3><p>Находим причину и считаем стоимость деталей и работы.</p></li>
+  <li><h3>Согласование</h3><p>Называем цену до начала ремонта. Без вашего согласия не чиним.</p></li>
+  <li><h3>Ремонт</h3><p>Чиним, проверяем и отдаём готовую технику.</p></li>
+ </ol>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+ <h2 style="margin-bottom:36px">Контакты</h2>
+ <div class="contact">
+  <div><small>Телефон</small><a class="phone" href="tel:+79378086702">+7 (937) 808-67-02</a></div>
+  <div><small>Адрес</small><p><a href="https://yandex.ru/maps/?text=%D0%91%D0%B0%D0%BB%D0%B0%D0%BA%D0%BE%D0%B2%D0%BE%2C%20%D0%A2%D1%80%D0%BD%D0%B0%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%203%2F5">Балаково, Трнавская улица, 3/5</a></p></div>
+  <div><small>Время работы</small><p>с 9:00 до 21:00</p><p class="st" id="st"></p></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">СЕРВИС №1 · Ремонт техники на батарейках и прокат велосипедов · Балаково</div></footer>
+<script>
+(function(){
+var R=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var h=document.querySelector(".hero h1");
+if(!R){h.innerHTML=h.textContent.split(" ").map(function(w,i){return '<span class="w" style="animation-delay:'+(.15+i*.12)+'s">'+w+"</span>"}).join(" ")}
+var els=document.querySelectorAll(".item,.rate,.steps li,section h2,.lead,.note,.contact>div");
+els.forEach(function(e){e.classList.add("rv");var i=Array.prototype.indexOf.call(e.parentNode.children,e);e.style.setProperty("--d",Math.min(i,5)*90+"ms")});
+function count(b){var t=b.textContent,n=parseInt(t,10),s=t.replace(/^\d+/,""),t0=null;
+ function f(ts){if(!t0)t0=ts;var k=Math.min((ts-t0)/900,1);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(f)}
+ requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;var e=x.target;e.classList.add("in");io.unobserve(e);
+ if(e.classList.contains("rate")&&!R)count(e.querySelector("b"))})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+var pr=document.querySelector(".prog");
+function up(){var m=document.documentElement.scrollHeight-innerHeight;pr.style.transform="scaleX("+(m>0?scrollY/m:0)+")"}
+addEventListener("scroll",up,{passive:true});up();
+var st=document.getElementById("st");
+try{var hr=+new Intl.DateTimeFormat("en-GB",{hour:"numeric",hour12:false,timeZone:"Europe/Saratov"}).format(new Date())%24;
+ var o=hr>=9&&hr<21;st.className="st "+(o?"open":"closed");st.textContent=o?"Сейчас открыто":"Сейчас закрыто, откроемся в 9:00"}catch(e){st.remove()}
+})();
+</script>
+</body>
+</html>
